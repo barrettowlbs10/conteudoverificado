@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Acesso disponível</title>
+
+<style>
+body{
+background:#000;
+font-family:Arial, sans-serif;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+margin:0;
+}
+
+.card{
+background:linear-gradient(180deg,#2fb3c9,#2a9bb1);
+width:420px;
+padding:50px 30px;
+border-radius:35px;
+text-align:center;
+color:white;
+box-shadow:0 20px 60px rgba(0,0,0,0.4);
+}
+
+.icon{
+font-size:42px;
+margin-bottom:20px;
+}
+
+h1{
+font-size:28px;
+margin-bottom:20px;
+}
+
+p{
+font-size:18px;
+line-height:1.6;
+margin-bottom:35px;
+}
+
+button{
+background:#00e04c;
+border:none;
+padding:18px 40px;
+font-size:20px;
+font-weight:bold;
+border-radius:14px;
+cursor:pointer;
+transition:0.2s;
+}
+
+button:hover{
+transform:scale(1.03);
+}
+
+.footer{
+margin-top:25px;
+font-size:14px;
+opacity:.9;
+}
+</style>
+
+<!-- TikTok Pixel -->
+<script>
+!function (w, d, t) {
+w.TiktokAnalyticsObject=t;
+var ttq=w[t]=w[t]||[];
+ttq.methods=["page","track"];
+ttq.setAndDefer=function(t,e){
+t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}
+};
+for(var i=0;i<ttq.methods.length;i++){
+ttq.setAndDefer(ttq,ttq.methods[i])
+}
+ttq.load=function(e){
+var s=d.createElement("script");
+s.async=!0;
+s.src="https://analytics.tiktok.com/i18n/pixel/events.js?sdkid="+e;
+d.head.appendChild(s);
+};
+ttq.load('D7OJSK3C77U0OLS4FV7G');
+ttq.page(); // Pageview
+ttq.track('ViewContent'); // ViewContent
+}(window, document, 'ttq');
+</script>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<div class="icon">🔒</div>
+
+<h1>Continuação disponível</h1>
+
+<p>
+Você será direcionado para a próxima etapa de acesso ao conteúdo apresentado no anúncio.
+Toque no botão abaixo para continuar.
+</p>
+
+<button onclick="entrar()">CONTINUAR →</button>
+
+<div class="footer">✔ Acesso realizado após confirmação</div>
+
+</div>
+
+<script>
+function entrar(){
+
+ttq.track('ClickButton'); // Evento clique
+
+// Caso queira disparar Purchase futuramente nesta página:
+function dispararPurchase(){
+ttq.track('Purchase');
+}
+
+// Redirecionamento após clique
+setTimeout(function(){
+window.location.href="https://seupresenteaqui.site/l/midiasonline?utm_source=tiktok&utm_campaign=__CAMPAIGN_NAME__|__CAMPAIGN_ID__&utm_medium=__AID_NAME__|__AID__&utm_content=__CID_NAME__|__CID__&utm_term=__PLACEMENT__&utm_id=__CAMPAIGN_ID__&shk=u9zt6np4";
+},300);
+
+}
+</script>
+
+</body>
+</html>
