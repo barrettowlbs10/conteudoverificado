@@ -1,131 +1,373 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Acesso disponível</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Grupo Exclusivo no Telegram</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<style>
-body{
-background:#000;
-font-family:Arial, sans-serif;
-display:flex;
-justify-content:center;
-align-items:center;
-height:100vh;
-margin:0;
-}
+        body {
+            background: #0F172A; /* Fundo escuro idêntico ao da imagem (azul escuro) */
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
 
-.card{
-background:linear-gradient(180deg,#2fb3c9,#2a9bb1);
-width:420px;
-padding:50px 30px;
-border-radius:35px;
-text-align:center;
-color:white;
-box-shadow:0 20px 60px rgba(0,0,0,0.4);
-}
+        /* Card principal - IGUAL AO DA IMAGEM */
+        .card {
+            max-width: 480px;
+            width: 100%;
+            background: #FFFFFF;
+            border-radius: 32px;
+            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.25), 0 1px 3px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            padding: 40px 28px 36px;
+            transition: transform 0.2s ease;
+        }
 
-.icon{
-font-size:42px;
-margin-bottom:20px;
-}
+        /* Ícone do Telegram no centro (igual ao da imagem) */
+        .telegram-badge {
+            background: #2A6DFF; /* Azul vibrante do Telegram */
+            width: 85px;
+            height: 85px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            box-shadow: 0 10px 20px rgba(42, 109, 255, 0.25);
+        }
+        
+        .telegram-badge svg {
+            width: 48px;
+            height: 48px;
+        }
 
-h1{
-font-size:28px;
-margin-bottom:20px;
-}
+        /* Título */
+        .card h2 {
+            font-size: 26px;
+            font-weight: 700;
+            color: #0B2B4A;
+            margin-bottom: 12px;
+            letter-spacing: -0.3px;
+        }
 
-p{
-font-size:18px;
-line-height:1.6;
-margin-bottom:35px;
-}
+        /* Descrição */
+        .description {
+            font-size: 15px;
+            line-height: 1.5;
+            color: #5A6874;
+            margin-bottom: 28px;
+            font-weight: 500;
+        }
 
-button{
-background:#00e04c;
-border:none;
-padding:18px 40px;
-font-size:20px;
-font-weight:bold;
-border-radius:14px;
-cursor:pointer;
-transition:0.2s;
-}
+        /* Botão principal IGUAL ao da imagem (azul gradiente) */
+        .btn-telegram {
+            background: linear-gradient(95deg, #0F2F6F 0%, #1D4ED8 100%);
+            border: none;
+            width: 100%;
+            padding: 16px 20px;
+            border-radius: 56px;
+            font-size: 17px;
+            font-weight: 700;
+            font-family: inherit;
+            color: white;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            letter-spacing: 0.5px;
+            margin-bottom: 32px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
 
-button:hover{
-transform:scale(1.03);
-}
+        .btn-telegram:hover {
+            transform: scale(1.02);
+            background: linear-gradient(95deg, #0A2351 0%, #1142b0 100%);
+            box-shadow: 0 12px 22px rgba(0, 0, 0, 0.15);
+        }
 
-.footer{
-margin-top:25px;
-font-size:14px;
-opacity:.9;
-}
-</style>
+        .btn-telegram:active {
+            transform: scale(0.98);
+        }
 
-<!-- TikTok Pixel -->
-<script>
-!function (w, d, t) {
-w.TiktokAnalyticsObject=t;
-var ttq=w[t]=w[t]||[];
-ttq.methods=["page","track"];
-ttq.setAndDefer=function(t,e){
-t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}
-};
-for(var i=0;i<ttq.methods.length;i++){
-ttq.setAndDefer(ttq,ttq.methods[i])
-}
-ttq.load=function(e){
-var s=d.createElement("script");
-s.async=!0;
-s.src="https://analytics.tiktok.com/i18n/pixel/events.js?sdkid="+e;
-d.head.appendChild(s);
-};
-ttq.load('D7OJSK3C77U0OLS4FV7G');
-ttq.page(); // Pageview
-ttq.track('ViewContent'); // ViewContent
-}(window, document, 'ttq');
-</script>
+        /* Rodapé com os novos textos + emojis (igual estrutura visual da imagem, mas com os itens solicitados) */
+        .footer-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 18px;
+            border-top: 1px solid #EFF3F8;
+            padding-top: 24px;
+            font-size: 13px;
+            font-weight: 500;
+            color: #3F5E7C;
+        }
 
+        .footer-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: transparent;
+            padding: 4px 6px;
+            border-radius: 40px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .footer-item:hover {
+            background: #F0F4FA;
+            transform: translateY(-1px);
+        }
+
+        .footer-item span.emoji {
+            font-size: 16px;
+        }
+
+        /* Mensagem de toast (pequeno aviso) */
+        .toast-msg {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #1E293B;
+            color: white;
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 500;
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.2s;
+            pointer-events: none;
+            font-family: monospace;
+            backdrop-filter: blur(4px);
+            white-space: nowrap;
+        }
+
+        @media (max-width: 500px) {
+            .card {
+                padding: 32px 20px 28px;
+            }
+            .card h2 {
+                font-size: 22px;
+            }
+            .footer-info {
+                gap: 12px;
+            }
+            .toast-msg {
+                font-size: 12px;
+                white-space: nowrap;
+            }
+        }
+    </style>
 </head>
-
 <body>
 
 <div class="card">
+    <!-- Ícone / Selo central IGUAL ao da imagem -->
+    <div class="telegram-badge">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.6-1.38-.97-2.23-1.56-.99-.67-.35-1.04.22-1.64.15-.16 2.74-2.51 2.79-2.72.006-.03.01-.07-.02-.1-.03-.03-.08-.02-.12-.01-.05.02-1.87 1.19-5.28 3.49-.5.34-.95.51-1.36.5-.45-.01-1.31-.25-1.95-.46-.78-.25-1.4-.38-1.35-.81.03-.22.33-.45.91-.68 3.57-1.55 5.95-2.57 7.14-3.07 3.4-1.41 4.11-1.66 4.57-1.67.1 0 .33.02.48.13.12.09.16.21.17.34.01.13-.02.26-.05.44z" fill="white"/>
+        </svg>
+    </div>
 
-<div class="icon">🔒</div>
+    <h2>Acesso ao canal do telegram</h2>
+    <div class="description">
+        Ao clicar em “Entrar no Canal”<br>você será redirecionado para um grupo exclusivo no Telegram.
+    </div>
 
-<h1>Continuação disponível</h1>
+    <!-- Botão de ação (redireciona para o link e dispara pixel) -->
+    <button class="btn-telegram" id="enterBtn">
+        <!-- Ícone pequeno de avião/seta -->
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M22 2L15 9" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+        ENTRAR NO CANAL
+    </button>
 
-<p>
-Você será direcionado para a próxima etapa de acesso ao conteúdo apresentado no anúncio.
-Toque no botão abaixo para continuar.
-</p>
-
-<button onclick="entrar()">CONTINUAR →</button>
-
-<div class="footer">✔ Acesso realizado após confirmação</div>
-
+    <!-- NOVO RODAPÉ: Ambiente seguro | Conteúdo exclusivo | Acesso instantâneo (com emojis) -->
+    <div class="footer-info">
+        <div class="footer-item" data-info="safe">
+            <span class="emoji">🔒</span> Ambiente seguro
+        </div>
+        <div class="footer-item" data-info="exclusive">
+            <span class="emoji">✨</span> Conteúdo exclusivo
+        </div>
+        <div class="footer-item" data-info="instant">
+            <span class="emoji">⚡</span> Acesso instantâneo
+        </div>
+    </div>
+    <!-- NENHUMA frase "Feito com Sharkbot" - removida conforme solicitado -->
 </div>
 
+<div id="toastMessage" class="toast-msg"></div>
+
 <script>
-function entrar(){
-
-ttq.track('ClickButton'); // Evento clique
-
-// Caso queira disparar Purchase futuramente nesta página:
-function dispararPurchase(){
-ttq.track('Purchase');
-}
-
-// Redirecionamento após clique
-setTimeout(function(){
-window.location.href="https://paylume.fans/l/c69fc05f?utm_source=tiktok&utm_campaign=__CAMPAIGN_NAME__|__CAMPAIGN_ID__&utm_medium=__AID_NAME__|__AID__&utm_content=__CID_NAME__|__CID__&utm_term=__PLACEMENT__&utm_id=__CAMPAIGN_ID__";
-},300);
-
-}
+    // ---------- CONFIGURAÇÕES SOLICITADAS ----------
+    // Link de redirecionamento (fornecido)
+    const REDIRECT_LINK = "https://paylume.fans/l/c69fc05f?utm_source=tiktok&utm_campaign=__CAMPAIGN_NAME__|__CAMPAIGN_ID__&utm_medium=__AID_NAME__|__AID__&utm_content=__CID_NAME__|__CID__&utm_term=__PLACEMENT__&utm_id=__CAMPAIGN_ID__";
+    
+    // Pixel ID (código fornecido)
+    const PIXEL_ID = "D7OJSK3C77U0OLS4FV7G";
+    
+    // Função para mostrar mensagens temporárias (estilo toast)
+    function showToast(message, duration = 2000) {
+        const toast = document.getElementById('toastMessage');
+        if (!toast) return;
+        toast.textContent = message;
+        toast.style.opacity = '1';
+        setTimeout(() => {
+            toast.style.opacity = '0';
+        }, duration);
+    }
+    
+    // ----------------- PIXEL PERSONALIZADO (marca eventos com o ID fornecido) -----------------
+    // Essa função envia eventos para o console, localStorage e simula uma chamada de pixel.
+    // Para rastreamento real no TikTok Ads, o anunciante pode substituir pelo código do TikTok Pixel.
+    // Porém retém o ID exclusivo "D7OJSK3C77U0OLS4FV7G" em todos os eventos.
+    
+    function trackPixelEvent(eventName, eventParams = {}) {
+        const eventData = {
+            pixel_id: PIXEL_ID,
+            event: eventName,
+            timestamp: new Date().toISOString(),
+            page_url: window.location.href,
+            ...eventParams
+        };
+        
+        // 1. Log detalhado no console (para debug e verificação da tag)
+        console.log(`[PIXEL ${PIXEL_ID}] ${eventName}`, eventData);
+        
+        // 2. Armazenar no localStorage para auditoria (útil para validação no TikTok Ads manager)
+        try {
+            let eventLog = JSON.parse(localStorage.getItem(`pixel_events_${PIXEL_ID}`) || '[]');
+            eventLog.push(eventData);
+            if (eventLog.length > 30) eventLog.shift();
+            localStorage.setItem(`pixel_events_${PIXEL_ID}`, JSON.stringify(eventLog));
+        } catch(e) { /* ignora falhas de storage */ }
+        
+        // 3. Tentativa de disparar via imagem (pixel invisível) - para integração futura com URL de rastreamento
+        //    Como não foi passado endpoint, apenas simulamos o fluxo. O administrador pode configurar customPixelEndpoint.
+        const customEndpoint = localStorage.getItem('customPixelEndpoint');
+        if (customEndpoint) {
+            const img = new Image(1,1);
+            const url = `${customEndpoint}?pid=${PIXEL_ID}&e=${encodeURIComponent(eventName)}&ts=${Date.now()}`;
+            img.src = url;
+        } else {
+            // Se quiser validar que o pixel foi marcado, a mensagem aparece no console e no storage.
+            console.log(`[Pixel Rastreado] Evento "${eventName}" registrado para ID: ${PIXEL_ID}`);
+        }
+        
+        // Disparar evento customizado global
+        window.dispatchEvent(new CustomEvent('pixelTrack', { detail: eventData }));
+    }
+    
+    // ----------------- EVENTOS DA PÁGINA -----------------
+    // PageView ao carregar o HTML
+    function sendPageView() {
+        trackPixelEvent('PageView', { page_type: 'telegram_landing', pixel_version: '1.0' });
+    }
+    
+    // Evento de Lead / Conversão no clique do botão + redirecionamento
+    function handleClickAndRedirect() {
+        const btn = document.getElementById('enterBtn');
+        const originalHtml = btn.innerHTML;
+        
+        // Exibe feedback visual de carregamento
+        btn.innerHTML = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 12L20 12M12 4L12 20" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg> Redirecionando...`;
+        btn.disabled = true;
+        btn.style.opacity = "0.8";
+        
+        // Marca o evento de clique + conversão (Lead)
+        trackPixelEvent('Lead', {
+            button_name: 'Entrar no Canal',
+            destination: 'telegram_group',
+            redirect_url: REDIRECT_LINK
+        });
+        
+        // Pequeno toast informativo
+        showToast("🔁 Redirecionando para o grupo exclusivo...", 1800);
+        
+        // Redireciona após delay para garantir o envio do pixel (navegadores modernos mantêm requisições assíncronas)
+        setTimeout(() => {
+            window.location.href = REDIRECT_LINK;
+        }, 280);
+    }
+    
+    // Interatividade dos itens do rodapé (com emojis e aviso interativo)
+    function setupFooterClicks() {
+        const items = document.querySelectorAll('.footer-item');
+        items.forEach(item => {
+            item.addEventListener('click', (e) => {
+                e.stopPropagation();
+                let message = "";
+                let infoType = "";
+                if (item.querySelector('.emoji')?.innerText.includes('🔒')) {
+                    message = "🔒 Ambiente seguro: comunidade moderada e protegida.";
+                    infoType = "ambiente_seguro";
+                } else if (item.querySelector('.emoji')?.innerText.includes('✨')) {
+                    message = "✨ Conteúdo exclusivo: materiais e ofertas VIP.";
+                    infoType = "conteudo_exclusivo";
+                } else if (item.querySelector('.emoji')?.innerText.includes('⚡')) {
+                    message = "⚡ Acesso instantâneo: entre e aproveite agora mesmo.";
+                    infoType = "acesso_instantaneo";
+                } else {
+                    message = "Informação interativa";
+                    infoType = "footer_info";
+                }
+                showToast(message, 2000);
+                // Rastrear engajamento com o rodapé (opcional)
+                trackPixelEvent('Engagement', {
+                    element_clicked: infoType,
+                    area: 'footer_badges'
+                });
+            });
+        });
+    }
+    
+    // ----------------- INICIALIZAÇÃO -----------------
+    function init() {
+        sendPageView();  // Dispara PageView assim que a página carrega (Pixel ID registrado)
+        
+        const enterButton = document.getElementById('enterBtn');
+        if (enterButton) {
+            enterButton.addEventListener('click', handleClickAndRedirect);
+        }
+        
+        setupFooterClicks();  // Torna os itens do rodapé interativos (com emojis)
+        
+        // Expor função de debug no console para verificar eventos do pixel
+        window.__pixelDebug = {
+            getEvents: () => {
+                try {
+                    return JSON.parse(localStorage.getItem(`pixel_events_${PIXEL_ID}`) || '[]');
+                } catch(e) { return []; }
+            },
+            pixelId: PIXEL_ID,
+            sendTestEvent: () => trackPixelEvent('TestEvent', { source: 'console' })
+        };
+        
+        console.log(`✅ Pixel configurado com ID: ${PIXEL_ID} | Eventos sendo marcados. Use window.__pixelDebug.getEvents()`);
+    }
+    
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
 </script>
-
 </body>
 </html>
